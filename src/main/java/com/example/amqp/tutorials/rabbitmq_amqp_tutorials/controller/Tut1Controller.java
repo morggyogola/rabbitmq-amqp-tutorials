@@ -1,6 +1,6 @@
 package com.example.amqp.tutorials.rabbitmq_amqp_tutorials.controller;
 
-import com.example.amqp.tutorials.rabbitmq_amqp_tutorials.dto.MessageDto;
+import com.example.amqp.tutorials.rabbitmq_amqp_tutorials.dto.UserDto;
 import com.example.amqp.tutorials.rabbitmq_amqp_tutorials.publisher.Tut1Sender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,5 +16,11 @@ public class Tut1Controller {
     private ResponseEntity<String> sendMessage(@RequestParam("message") String message) {
         producer.send(message);
         return ResponseEntity.ok("Message sent to RabbitMq");
+    }
+
+    @PostMapping("/publish")
+    private ResponseEntity<String> sendMessage(@RequestBody UserDto userDto) {
+        producer.sendJson(userDto);
+        return ResponseEntity.ok("Json Message sent to RabbitMq");
     }
 }

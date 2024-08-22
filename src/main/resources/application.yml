@@ -20,11 +20,15 @@ tutorial:
 rabbitmq:
   queue:
     name: "hello"
+    json:
+      name: "hello_json"
   exchange:
     name: "hello_exchange"
   routing:
     key:
       name: "hello_routing_key"
+      json:
+        name: "hello_json_routing_key"
 
 
 
