@@ -27,7 +27,7 @@ public class Tut1Sender {
 
     private static final Logger log = LoggerFactory.getLogger(Tut1Sender.class);
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
+
     public void send(String message) {
         log.info(String.format("Sending message: %s", message));
         template.convertAndSend(exchangeName, routingKeyName, message);
