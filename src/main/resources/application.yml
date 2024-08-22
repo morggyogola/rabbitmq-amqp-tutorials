@@ -2,7 +2,7 @@
 
 spring:
   profiles:
-    active: use_message
+    active: tut1
   rabbitmq:
     host: localhost
     port: 5672
@@ -16,6 +16,15 @@ logging:
 tutorial:
   client:
     duration: 10000
+
+rabbitmq:
+  queue:
+    name: "hello"
+  exchange:
+    name: "hello_exchange"
+  routing:
+    key:
+      name: "hello_routing_key"
 
 
 
