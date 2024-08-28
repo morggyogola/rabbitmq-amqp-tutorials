@@ -19,7 +19,7 @@ public class Tut1Controller {
     }
 
     @PostMapping("/publish")
-    private ResponseEntity<String> sendMessage(@RequestBody UserDto userDto) {
+    private ResponseEntity<String> sendJsonMessage(@RequestBody UserDto userDto) {
         producer.sendJson(userDto);
         return ResponseEntity.ok("Json Message sent to RabbitMq");
     }

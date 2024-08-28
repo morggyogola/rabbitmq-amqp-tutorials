@@ -37,7 +37,7 @@ public class Tut1Sender {
 
     }
     public void sendJson(UserDto userDto) {
-        log.info(String.format("Sending message: %s", userDto.toString()));
+        log.info(String.format("Sending json message: %s", userDto.toString()));
         template.convertAndSend(exchangeName, jsonRoutingKeyName, userDto);
 
     }

@@ -8,6 +8,8 @@ spring:
     port: 5672
     username: guest
     password: guest
+  main:
+    allow-bean-definition-overriding: true
 
 logging:
   level:
@@ -29,6 +31,9 @@ rabbitmq:
       name: "hello_routing_key"
       json:
         name: "hello_json_routing_key"
+
+
+
 
 
 
